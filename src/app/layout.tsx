@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
+import HashScrollHandler from "@/components/HashScrollHandler";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={`${cairo.variable} scroll-smooth`}>
       <body className="font-sans antialiased bg-white text-gray-900">
+        <HashScrollHandler />
         {children}
       </body>
     </html>

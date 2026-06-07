@@ -7,11 +7,11 @@ import { Menu, X } from "lucide-react";
 import { SITE, LOGO_IMAGE } from "@/lib/constants";
 
 const navLinks = [
-  { href: "#home", label: "الرئيسية" },
-  { href: "#services", label: "خدماتنا" },
-  { href: "#portfolio", label: "أعمالنا" },
-  { href: "#about", label: "من نحن" },
-  { href: "#contact", label: "تواصل معنا" },
+  { href: "/#home", label: "الرئيسية" },
+  { href: "/#services", label: "خدماتنا" },
+  { href: "/#portfolio", label: "أعمالنا" },
+  { href: "/#about", label: "من نحن" },
+  { href: "/#contact", label: "تواصل معنا" },
 ];
 
 export default function Header() {
@@ -34,7 +34,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="#home" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center gap-2.5">
             <Image
               src={LOGO_IMAGE}
               alt={SITE.name}
@@ -62,7 +62,7 @@ export default function Header() {
           </nav>
 
           <Link
-            href="#booking"
+            href="/#booking"
             className="hidden lg:inline-flex px-6 py-2.5 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-colors"
           >
             احجز الآن
@@ -92,7 +92,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="#booking"
+              href="/#booking"
               onClick={() => setIsOpen(false)}
               className="mt-2 px-4 py-3 rounded-xl bg-purple-600 text-white font-semibold text-center"
             >

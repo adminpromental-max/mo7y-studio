@@ -43,9 +43,7 @@ const cardThemes: Record<
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="py-24 relative overflow-hidden"
+    <section id="services" className="py-24 relative overflow-hidden scroll-mt-20"
       style={{
         background: `
           radial-gradient(ellipse 60% 40% at 90% 10%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),

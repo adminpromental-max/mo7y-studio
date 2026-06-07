@@ -8,7 +8,7 @@ import { galleryCategories } from "@/data/portfolio";
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-24 overflow-hidden">
+    <section id="portfolio" className="relative py-24 overflow-hidden scroll-mt-20">
       <div className="absolute inset-0 -z-10">
         <Image
           src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80"
