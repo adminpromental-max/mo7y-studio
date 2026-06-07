@@ -68,18 +68,18 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="relative order-1 lg:order-2"
           >
-            <div className="relative max-w-[340px] sm:max-w-[380px] mx-auto">
-              <div className="relative aspect-[3/4] min-h-[420px] sm:min-h-[480px]">
+            <div className="relative max-w-[340px] sm:max-w-[380px] mx-auto pb-2">
+              <div className="relative aspect-[3/4] min-h-[360px] sm:min-h-[420px]">
                 <Image
                   src={CHARACTER_IMAGE}
                   alt="محيي — Mo7y Studio"
                   fill
                   unoptimized
-                  className="object-contain object-bottom drop-shadow-xl"
+                  className="object-contain object-[center_88%] drop-shadow-xl scale-[1.06] -translate-y-6 sm:-translate-y-8"
                   sizes="(max-width: 1024px) 90vw, 380px"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-4 sm:-right-6 w-full max-w-xs z-10">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[88%] max-w-[300px] z-10">
                 <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {stats.map((stat) => {
                     const Icon = stat.icon;
