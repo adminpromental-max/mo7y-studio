@@ -5,9 +5,9 @@ export const SITE = {
   description:
     "خدمات تصوير ومونتاج احترافية بأحدث المعدات وأفضل الخبرات",
   url: "https://mo7y.com",
-  whatsapp: "966500000000",
+  whatsapp: "966554297985",
   email: "info@mo7y.com",
-  phone: "+966 50 000 0000",
+  phone: "+966 55 429 7985",
   address: "المملكة العربية السعودية",
   social: {
     instagram: "https://instagram.com/mo7ystudio",
