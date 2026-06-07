@@ -217,13 +217,13 @@ export default function HeroBackground() {
         }}
       />
 
-      {/* Animated aurora blobs */}
-      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-purple-400/30 blur-[100px] animate-pulse" />
+      {/* Animated aurora blobs — contained to avoid horizontal scroll */}
+      <div className="absolute top-0 right-0 w-[min(500px,100vw)] h-[min(500px,80vh)] rounded-full bg-purple-400/30 blur-[100px] animate-pulse translate-x-1/4 -translate-y-1/4" />
       <div
-        className="absolute -bottom-24 -left-24 w-[450px] h-[450px] rounded-full bg-cyan-400/25 blur-[90px]"
+        className="absolute bottom-0 left-0 w-[min(450px,90vw)] h-[min(450px,70vh)] rounded-full bg-cyan-400/25 blur-[90px] -translate-x-1/4 translate-y-1/4"
         style={{ animation: "pulse 4s ease-in-out infinite alternate" }}
       />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-violet-300/20 blur-[80px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(600px,100vw)] h-[min(300px,50vh)] rounded-full bg-violet-300/20 blur-[80px]" />
 
       <Canvas
         camera={{ position: [0, 0, 8], fov: 55 }}

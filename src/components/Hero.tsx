@@ -18,27 +18,27 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20 scroll-mt-20"
+      className="relative min-h-[100dvh] lg:min-h-screen flex items-start lg:items-center overflow-hidden pt-16 sm:pt-20 scroll-mt-16 sm:scroll-mt-20"
     >
       <HeroBackground />
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Image — mobile first, desktop left (RTL col 2) */}
+      <div className="relative z-10 w-full max-w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-16 items-center">
+          {/* Image — أولاً على الموبايل */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="relative order-1 lg:order-2 flex justify-center lg:justify-start"
           >
             <motion.div
-              animate={{ y: [0, -14, 0] }}
+              animate={{ y: [0, -10, 0] }}
               transition={{
                 duration: 5,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px] aspect-square"
+              className="relative w-[160px] h-[160px] sm:w-[220px] sm:h-[220px] lg:w-[300px] lg:h-[300px] xl:w-[340px] xl:h-[340px]"
             >
               <Image
                 src={heroSrc}
@@ -47,29 +47,29 @@ export default function Hero() {
                 unoptimized
                 className="object-contain drop-shadow-2xl"
                 priority
-                sizes="(max-width: 1024px) 280px, 380px"
+                sizes="(max-width: 640px) 160px, (max-width: 1024px) 220px, 340px"
                 onError={() => setHeroSrc(HERO_IMAGE_FALLBACK)}
               />
             </motion.div>
           </motion.div>
 
-          {/* Text — mobile second, desktop right (RTL col 1) */}
+          {/* Text — تحت الصورة على الموبايل */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1 text-center lg:text-right"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="order-2 lg:order-1 text-center lg:text-right min-w-0"
           >
             <motion.span
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-md text-purple-700 text-sm font-medium mb-6 border border-purple-200/50 shadow-sm"
+              transition={{ delay: 0.25 }}
+              className="inline-block px-3 py-1 rounded-full bg-white/70 backdrop-blur-md text-purple-700 text-xs sm:text-sm font-medium mb-3 sm:mb-5 border border-purple-200/50 shadow-sm"
             >
               استوديو تصوير ومونتاج احترافي
             </motion.span>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-gray-900 mb-6">
+            <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-snug sm:leading-tight text-gray-900 mb-3 sm:mb-6">
               نحول{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-purple-600 to-purple-400">
                 لحظاتك
@@ -77,37 +77,39 @@ export default function Hero() {
               إلى ذكريات خالدة
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 lg:mr-0 leading-relaxed">
+            <p className="text-sm sm:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               {SITE.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-row gap-2 sm:gap-4 justify-center lg:justify-start">
               <Link
                 href="#booking"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-all shadow-lg shadow-purple-500/30 hover:shadow-purple-500/40 hover:-translate-y-0.5"
+                className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-purple-600 text-white text-sm sm:text-base font-semibold hover:bg-purple-700 transition-all shadow-lg shadow-purple-500/30"
               >
                 احجز الآن
-                <ArrowLeft className="w-5 h-5" />
+                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
               <Link
                 href="#portfolio"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl border-2 border-purple-600 text-purple-600 font-semibold hover:bg-purple-50/80 backdrop-blur-sm transition-all"
+                className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-purple-600 text-purple-600 text-sm sm:text-base font-semibold hover:bg-purple-50/80 backdrop-blur-sm transition-all"
               >
                 شاهد أعمالنا
               </Link>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-purple-200/50">
+            <div className="grid grid-cols-3 gap-2 sm:gap-6 mt-5 sm:mt-12 pt-4 sm:pt-8 border-t border-purple-200/50">
               {[
                 { value: "+10", label: "سنوات خبرة" },
                 { value: "+500", label: "مشروع منجز" },
                 { value: "+200", label: "عميل سعيد" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-2xl sm:text-3xl font-bold text-purple-600">
+                  <p className="text-lg sm:text-2xl lg:text-3xl font-bold text-purple-600">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
+                  <p className="text-[10px] sm:text-sm text-gray-500 mt-0.5 sm:mt-1">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
