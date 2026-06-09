@@ -15,6 +15,12 @@ const cardThemes: Record<
   string,
   { color: string; accent: string; gradient: string; border: string }
 > = {
+  "visual-content": {
+    color: "#7C3AED",
+    accent: "#A78BFA",
+    gradient: "from-violet-500/20 via-purple-400/10 to-transparent",
+    border: "border-violet-200/80 hover:border-violet-400",
+  },
   photo: {
     color: COLORS.primary,
     accent: COLORS.primaryLight,
@@ -33,17 +39,25 @@ const cardThemes: Record<
     gradient: "from-amber-500/20 via-yellow-400/10 to-transparent",
     border: "border-amber-200/80 hover:border-amber-400",
   },
-  creative: {
-    color: "#A855F7",
-    accent: COLORS.accentRed,
-    gradient: "from-fuchsia-500/20 via-pink-400/10 to-transparent",
-    border: "border-fuchsia-200/80 hover:border-fuchsia-400",
+  web: {
+    color: "#2563EB",
+    accent: "#60A5FA",
+    gradient: "from-blue-500/20 via-sky-400/10 to-transparent",
+    border: "border-blue-200/80 hover:border-blue-400",
+  },
+  growth: {
+    color: "#059669",
+    accent: "#34D399",
+    gradient: "from-emerald-500/20 via-green-400/10 to-transparent",
+    border: "border-emerald-200/80 hover:border-emerald-400",
   },
 };
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 relative overflow-hidden scroll-mt-20"
+    <section
+      id="services"
+      className="py-24 relative overflow-hidden scroll-mt-20"
       style={{
         background: `
           radial-gradient(ellipse 60% 40% at 90% 10%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
@@ -67,11 +81,11 @@ export default function Services() {
             خدماتنا
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            نقدم مجموعة متكاملة من خدمات التصوير والإنتاج المرئي والمونتاج
+            من المحتوى والإنتاج البصري للمواقع والتسويق — حلول متكاملة تدعم نمو مشروعك
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {mainServices.map((service, index) => {
             const Icon = service.icon;
             const theme = cardThemes[service.id];
@@ -81,12 +95,11 @@ export default function Services() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                whileHover={{ y: -6, scale: 1.01 }}
+                transition={{ duration: 0.5, delay: index * 0.06 }}
+                whileHover={{ y: -4 }}
                 className={`group relative overflow-hidden rounded-2xl border bg-white/70 backdrop-blur-sm shadow-md hover:shadow-xl transition-shadow duration-300 ${theme.border}`}
               >
-                {/* 3D canvas header */}
-                <div className="relative h-36 overflow-hidden">
+                <div className="relative h-32 overflow-hidden">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${theme.gradient}`}
                   />
@@ -95,13 +108,13 @@ export default function Services() {
                     color={theme.color}
                     accent={theme.accent}
                   />
-                  <div className="absolute bottom-3 right-4 z-10 w-11 h-11 rounded-xl bg-white/90 backdrop-blur-sm shadow-md flex items-center justify-center">
+                  <div className="absolute bottom-3 right-4 z-10 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-sm shadow-md flex items-center justify-center">
                     <Icon className="w-5 h-5" style={{ color: theme.color }} />
                   </div>
                 </div>
 
-                <div className="p-6 pt-4">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
                     {service.title}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -118,7 +131,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-10 flex flex-wrap justify-center gap-2 max-w-3xl mx-auto"
+          className="mt-10 flex flex-wrap justify-center gap-2 max-w-4xl mx-auto"
         >
           {extraServiceChips.map((chip) => (
             <span

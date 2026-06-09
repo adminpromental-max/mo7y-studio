@@ -118,8 +118,9 @@ export default function About() {
               من نحن
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              <strong className="text-gray-900">Mo7y Studio</strong> هو وجهتك
-              المثالية لخدمات التصوير والإنتاج المرئي الاحترافية.
+              <strong className="text-gray-900">Mo7y Studio</strong> شريكك في بناء
+              ونمو علامتك التجارية — من المحتوى والإنتاج البصري للمواقع والتسويق
+              الرقمي.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">

@@ -1,9 +1,10 @@
 export const SITE = {
   name: "Mo7y Studio",
   nameAr: "استوديو محيي",
-  tagline: "نحول لحظاتك إلى ذكريات خالدة",
+  tagline: "شريكك في بناء ونمو علامتك التجارية",
+  taglineSub: "نبني حضورك.. ونسرّع نمو أعمالك",
   description:
-    "خدمات تصوير ومونتاج احترافية بأحدث المعدات وأفضل الخبرات",
+    "من الاستراتيجية وصناعة المحتوى للإنتاج البصري والمواقع والتسويق — كل ما يحتاجه مشروعك للنمو في مكان واحد.",
   url: "https://mo7y.com",
   whatsapp: "966554297985",
   email: "info@mo7y.com",
@@ -21,12 +22,11 @@ export const SITE = {
   },
 } as const;
 
-/** Assets in public/ */
-export const HERO_IMAGE = "/camera-hero.png";
+/** صورة الهيرو الجديدة — ارفع hero-brand.png في public/ */
+export const HERO_IMAGE = "/hero-brand.png";
+export const HERO_IMAGE_FALLBACK = "/mo7y-character.png";
 export const LOGO_IMAGE = "/logo.png";
 export const CHARACTER_IMAGE = "/mo7y-character.png";
-export const HERO_IMAGE_FALLBACK =
-  "https://images.unsplash.com/photo-1606986628038-453617814375?w=800&q=80";
 
 export const COLORS = {
   primary: "#6B28D9",

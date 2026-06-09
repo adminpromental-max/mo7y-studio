@@ -35,7 +35,7 @@ export default function Portfolio() {
             أعمالنا
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            نماذج من أحدث أعمالنا في مختلف المجالات
+            نماذج من أعمالنا في التصوير والفيديو والمواقع والحملات الرقمية
           </p>
         </motion.div>
 

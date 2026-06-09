@@ -2,15 +2,15 @@
 
 import { motion } from "framer-motion";
 import {
+  Layers,
   Camera,
-  Clapperboard,
-  Sparkles,
-  Palette,
+  Video,
   Film,
-  Wand2,
+  Globe,
+  TrendingUp,
 } from "lucide-react";
 
-const icons = [Camera, Clapperboard, Film, Palette, Sparkles, Wand2];
+const icons = [Layers, Camera, Video, Film, Globe, TrendingUp];
 
 export default function ServicesBanner() {
   return (
@@ -21,7 +21,6 @@ export default function ServicesBanner() {
       transition={{ duration: 0.6 }}
       className="relative mt-16 overflow-hidden rounded-3xl border border-purple-200/60"
     >
-      {/* Light premium gradient */}
       <div className="absolute inset-0 bg-gradient-to-l from-violet-100 via-purple-50 to-cyan-50" />
 
       <motion.div
@@ -30,29 +29,7 @@ export default function ServicesBanner() {
         className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12"
       />
 
-      {/* Floating decorative dots */}
-      {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={i}
-          animate={{
-            y: [0, -8, 0],
-            opacity: [0.3, 0.7, 0.3],
-          }}
-          transition={{
-            duration: 2.5 + i * 0.4,
-            repeat: Infinity,
-            delay: i * 0.3,
-          }}
-          className="absolute w-2 h-2 rounded-full bg-purple-400/40"
-          style={{
-            top: `${20 + i * 12}%`,
-            right: `${10 + i * 14}%`,
-          }}
-        />
-      ))}
-
       <div className="relative px-6 py-8 sm:px-10 sm:py-10 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
-        {/* Animated icons row */}
         <div className="flex items-center gap-3 sm:gap-4 shrink-0">
           {icons.map((Icon, i) => (
             <motion.div
@@ -76,7 +53,7 @@ export default function ServicesBanner() {
           transition={{ duration: 3, repeat: Infinity }}
           className="text-base sm:text-lg md:text-xl font-bold text-purple-800 text-center sm:text-right leading-relaxed"
         >
-          نعمل بأحدث برامج التصوير والمونتاج لضمان أفضل النتائج
+          نجمع الإبداع والتقنية والاستراتيجية — شريك واحد لنمو مشروعك
         </motion.p>
       </div>
     </motion.div>
