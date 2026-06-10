@@ -255,15 +255,17 @@ export default function HeroBackground() {
       />
 
       <Canvas
-        camera={{ position: [0, 0.5, 9], fov: 50 }}
+        camera={{ position: [-1.2, 0.5, 9], fov: 50 }}
         dpr={[1, 1.5]}
+        className="!absolute inset-0 opacity-70 lg:opacity-55"
         style={{ position: "absolute", inset: 0 }}
         gl={{ alpha: true, antialias: true }}
       >
         <Scene />
       </Canvas>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/70 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/80 pointer-events-none" />
+      <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-white/80 to-transparent pointer-events-none" />
     </div>
   );
 }

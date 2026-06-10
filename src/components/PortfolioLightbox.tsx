@@ -3,7 +3,7 @@
 import { useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronRight, ChevronLeft } from "lucide-react";
+import { X, ChevronRight, ChevronLeft, ExternalLink } from "lucide-react";
 import type { PortfolioItem } from "@/data/portfolio";
 import { isVideoEmbed, toEmbedUrl } from "@/data/portfolio";
 
@@ -145,6 +145,18 @@ export default function PortfolioLightbox({
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
+            )}
+
+            {item.siteUrl && item.siteUrl !== "#" && (
+              <a
+                href={item.siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-colors shadow-lg"
+              >
+                زيارة الموقع
+                <ExternalLink className="w-4 h-4" />
+              </a>
             )}
           </div>
 

@@ -22,9 +22,12 @@ export const SITE = {
   },
 } as const;
 
-/** صورة الهيرو الجديدة — ارفع hero-brand.png في public/ */
-export const HERO_IMAGE = "/hero-brand.png";
+export const HERO_IMAGE = "/mo7y-hero.png";
 export const HERO_IMAGE_FALLBACK = "/mo7y-character.png";
+
+/** رابط صفحة Amelia على WordPress — يُضبط في Vercel */
+export const AMELIA_BOOKING_URL =
+  process.env.NEXT_PUBLIC_AMELIA_BOOKING_URL ?? "";
 export const LOGO_IMAGE = "/logo.png";
 export const CHARACTER_IMAGE = "/mo7y-character.png";
 

@@ -12,6 +12,7 @@ import {
   getGalleryBySlug,
   getItemsForGallery,
   getFiltersForGallery,
+  isValidGallerySlug,
 } from "@/data/portfolio";
 
 interface Props {
@@ -36,11 +37,12 @@ export default async function PortfolioPage({ params }: Props) {
   const { slug } = await params;
   const gallery = getGalleryBySlug(slug);
 
-  if (!gallery || (slug !== "photos" && slug !== "videos")) notFound();
+  if (!gallery || !isValidGallerySlug(slug)) notFound();
 
   const items = getItemsForGallery(slug);
   const filters = getFiltersForGallery(slug);
   const isVideo = slug === "videos";
+  const isWebsite = slug === "websites";
 
   return (
     <>
@@ -77,6 +79,7 @@ export default async function PortfolioPage({ params }: Props) {
             items={items}
             filters={filters}
             isVideo={isVideo}
+            isWebsite={isWebsite}
           />
         </div>
       </main>

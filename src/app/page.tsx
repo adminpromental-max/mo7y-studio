@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
+import GrowthQuiz from "@/components/GrowthQuiz";
+import Partners from "@/components/Partners";
 import About from "@/components/About";
 import Booking from "@/components/Booking";
 import Contact from "@/components/Contact";
@@ -16,6 +18,8 @@ export default function Home() {
         <Hero />
         <Services />
         <Portfolio />
+        <GrowthQuiz />
+        <Partners />
         <About />
         <Booking />
         <Contact />

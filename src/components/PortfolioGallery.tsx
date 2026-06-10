@@ -17,13 +17,21 @@ interface Props {
   items: PortfolioItem[];
   filters: Filter[];
   isVideo?: boolean;
+  isWebsite?: boolean;
 }
 
-export default function PortfolioGallery({ items, filters, isVideo }: Props) {
+export default function PortfolioGallery({
+  items,
+  filters,
+  isVideo,
+  isWebsite,
+}: Props) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [viewMode, setViewMode] = useState<"carousel" | "grid">("carousel");
+  const [viewMode, setViewMode] = useState<"carousel" | "grid">(
+    isWebsite ? "grid" : "carousel"
+  );
 
   const filtered = useMemo(
     () =>
@@ -59,7 +67,8 @@ export default function PortfolioGallery({ items, filters, isVideo }: Props) {
 
       <div className="flex items-center justify-between mb-6 max-w-4xl mx-auto">
         <p className="text-gray-500 text-sm">
-          {filtered.length} {isVideo ? "فيديو" : "صورة"}
+          {filtered.length}{" "}
+          {isWebsite ? "موقع" : isVideo ? "فيديو" : "صورة"}
         </p>
         <div className="flex gap-1 bg-white rounded-xl p-1 border border-gray-200">
           <button

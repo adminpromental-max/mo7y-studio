@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/#home", label: "الرئيسية" },
   { href: "/#services", label: "خدماتنا" },
   { href: "/#portfolio", label: "أعمالنا" },
+  { href: "/business-growth", label: "تطوير الأعمال" },
   { href: "/#about", label: "من نحن" },
   { href: "/#contact", label: "تواصل معنا" },
 ];
@@ -58,12 +59,12 @@ export default function Header() {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors relative group"
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors relative group text-sm"
               >
                 {link.label}
                 <span className="absolute -bottom-1 right-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
@@ -73,15 +74,15 @@ export default function Header() {
 
           <div className="flex items-center gap-1 shrink-0">
             <Link
-              href="/#booking"
-              className="hidden lg:inline-flex px-6 py-2.5 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-colors"
+              href="/booking"
+              className="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition-colors"
             >
               احجز الآن
             </Link>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 -ml-1 rounded-xl text-gray-700 hover:bg-purple-50 transition-colors"
+              className="xl:hidden p-2 -ml-1 rounded-xl text-gray-700 hover:bg-purple-50 transition-colors"
               aria-label="القائمة"
               aria-expanded={isOpen}
             >
@@ -92,7 +93,7 @@ export default function Header() {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden bg-white border-t max-h-[calc(100dvh-4rem)] overflow-y-auto">
+        <div className="xl:hidden bg-white border-t max-h-[calc(100dvh-4rem)] overflow-y-auto">
           <nav className="px-3 sm:px-6 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
@@ -105,7 +106,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/#booking"
+              href="/booking"
               onClick={() => setIsOpen(false)}
               className="mt-2 px-4 py-3 rounded-xl bg-purple-600 text-white font-semibold text-center"
             >
