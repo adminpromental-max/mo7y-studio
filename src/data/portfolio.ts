@@ -232,9 +232,21 @@ export const videoItems: PortfolioItem[] = [
   },
 ];
 
+/**
+ * لكل موقع: ضع screenshot في image و الرابط الحقيقي في siteUrl
+ * مثال: image: "/portfolio/websites/restaurant-01.jpg"
+ */
 export const websiteItems: PortfolioItem[] = [
   {
     id: "ws1",
+    title: "Mo7y Studio",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=85",
+    tag: "corporate",
+    aspect: "landscape",
+    siteUrl: "https://mo7y.com",
+  },
+  {
+    id: "ws2",
     title: "مطعم الذوق الرفيع",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=85",
     tag: "restaurant",
@@ -242,7 +254,7 @@ export const websiteItems: PortfolioItem[] = [
     siteUrl: "#",
   },
   {
-    id: "ws2",
+    id: "ws3",
     title: "كافيه لاونج",
     image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=85",
     tag: "cafe",
@@ -250,7 +262,7 @@ export const websiteItems: PortfolioItem[] = [
     siteUrl: "#",
   },
   {
-    id: "ws3",
+    id: "ws4",
     title: "متجر أناقة",
     image: "https://images.unsplash.com/photo-1472851294607-062e8248de82?w=800&q=85",
     tag: "ecommerce",
@@ -258,7 +270,7 @@ export const websiteItems: PortfolioItem[] = [
     siteUrl: "#",
   },
   {
-    id: "ws4",
+    id: "ws5",
     title: "شركة نمو للاستشارات",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=85",
     tag: "corporate",
@@ -266,7 +278,7 @@ export const websiteItems: PortfolioItem[] = [
     siteUrl: "#",
   },
   {
-    id: "ws5",
+    id: "ws6",
     title: "صفحة إطلاق منتج",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=85",
     tag: "landing",
@@ -274,7 +286,7 @@ export const websiteItems: PortfolioItem[] = [
     siteUrl: "#",
   },
   {
-    id: "ws6",
+    id: "ws7",
     title: "مطعم بيتزا هاوس",
     image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85",
     tag: "restaurant",
@@ -282,7 +294,7 @@ export const websiteItems: PortfolioItem[] = [
     siteUrl: "#",
   },
   {
-    id: "ws7",
+    id: "ws8",
     title: "براند كوفي",
     image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=85",
     tag: "cafe",
@@ -290,7 +302,7 @@ export const websiteItems: PortfolioItem[] = [
     siteUrl: "#",
   },
   {
-    id: "ws8",
+    id: "ws9",
     title: "متجر عطور فاخرة",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=85",
     tag: "ecommerce",
@@ -298,18 +310,10 @@ export const websiteItems: PortfolioItem[] = [
     siteUrl: "#",
   },
   {
-    id: "ws9",
+    id: "ws10",
     title: "ستارت أب تك",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=85",
     tag: "corporate",
-    aspect: "landscape",
-    siteUrl: "#",
-  },
-  {
-    id: "ws10",
-    title: "حملة إطلاق موسمية",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=85",
-    tag: "landing",
     aspect: "landscape",
     siteUrl: "#",
   },

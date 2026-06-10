@@ -28,7 +28,7 @@ export default function BusinessGrowthPage() {
               تطوير الأعمال
             </h1>
             <p className="text-white/85 text-lg max-w-2xl mx-auto">
-              من أول فكرة لحد الإطلاق — نمشي معك خطوة بخطوة
+              من دراسة الفكرة والسوق لحد الإطلاق — 6 خطوات نبني فيها مشروعك
             </p>
           </div>
         </div>

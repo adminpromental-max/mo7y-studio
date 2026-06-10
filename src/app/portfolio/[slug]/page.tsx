@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PortfolioGallery from "@/components/PortfolioGallery";
+import WebsitePortfolioGallery from "@/components/WebsitePortfolioGallery";
 import {
   galleryCategories,
   getGalleryBySlug,
@@ -75,12 +76,15 @@ export default async function PortfolioPage({ params }: Props) {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <PortfolioGallery
-            items={items}
-            filters={filters}
-            isVideo={isVideo}
-            isWebsite={isWebsite}
-          />
+          {isWebsite ? (
+            <WebsitePortfolioGallery items={items} filters={filters} />
+          ) : (
+            <PortfolioGallery
+              items={items}
+              filters={filters}
+              isVideo={isVideo}
+            />
+          )}
         </div>
       </main>
       <Footer />

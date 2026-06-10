@@ -105,13 +105,13 @@ export default function Hero() {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="relative aspect-square w-full"
               >
-                <div className="absolute inset-[8%] rounded-full bg-purple-400/15 blur-3xl" />
+                <div className="absolute inset-[12%] rounded-full bg-purple-300/10 blur-2xl" />
                 <Image
                   src={heroSrc}
                   alt="Mo7y Studio — شريك نمو علامتك التجارية"
                   fill
                   unoptimized
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-[0_20px_50px_rgba(107,40,217,0.15)]"
                   priority
                   sizes="(max-width: 640px) 200px, (max-width: 1024px) 280px, 520px"
                   onError={handleImageError}
