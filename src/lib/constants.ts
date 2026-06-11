@@ -25,9 +25,10 @@ export const SITE = {
 export const HERO_IMAGE = "/mo7y-hero.png";
 export const HERO_IMAGE_FALLBACK = "/mo7y-character.png";
 
-/** رابط صفحة Amelia على WordPress — يُضبط في Vercel */
+/** صفحة الحجز على Amelia — WordPress subdomain */
 export const AMELIA_BOOKING_URL =
-  process.env.NEXT_PUBLIC_AMELIA_BOOKING_URL ?? "";
+  process.env.NEXT_PUBLIC_AMELIA_BOOKING_URL ??
+  "https://booking.mo7y.com/";
 export const LOGO_IMAGE = "/logo.png";
 export const CHARACTER_IMAGE = "/mo7y-character.png";
 

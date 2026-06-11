@@ -41,8 +41,13 @@ export default function AmeliaBooking() {
         title="حجز موعد — Mo7y Studio"
         className="w-full border-0"
         style={{ minHeight: "calc(100dvh - 12rem)" }}
-        allow="payment"
+        allow="payment; fullscreen"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
       />
+      <p className="text-center text-xs text-gray-400 py-3">
+        الحجز يتم عبر نظام Amelia — كل المواعيد تظهر في لوحة التحكم
+      </p>
     </div>
   );
 }
