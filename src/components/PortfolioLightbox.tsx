@@ -129,6 +129,7 @@ export default function PortfolioLightbox({
                   src={item.image}
                   alt={item.title}
                   fill
+                  unoptimized={item.image.startsWith("/portfolio")}
                   className="object-contain"
                   sizes="100vw"
                   priority
@@ -180,6 +181,7 @@ export default function PortfolioLightbox({
                     src={thumb.image}
                     alt=""
                     fill
+                    unoptimized={thumb.image.startsWith("/portfolio")}
                     className="object-cover"
                     sizes="64px"
                   />

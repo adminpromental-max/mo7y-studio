@@ -1,4 +1,8 @@
+import { photoItems } from "./photoItems";
+
 export type GallerySlug = "photos" | "videos" | "websites";
+
+export { photoItems };
 
 export interface GalleryCategory {
   id: string;
@@ -28,18 +32,16 @@ export const galleryCategories: GalleryCategory[] = [
     title: "معرض الصور",
     description: "كتالوج صور احترافية في مختلف المجالات",
     slug: "photos",
-    image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-    count: 32,
+    image: photoItems[0]?.image ?? "/mo7y-hero.png",
+    count: photoItems.length,
   },
   {
     id: "videos",
     title: "معرض الفيديوهات",
     description: "فيديوهات طولية وعرضية بجودة إنتاج عالية",
     slug: "videos",
-    image:
-      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80",
-    count: 16,
+    image: "https://img.youtube.com/vi/8Zy51_MkOog/hqdefault.jpg",
+    count: 2,
   },
   {
     id: "websites",
@@ -77,158 +79,22 @@ export const videoFilters = [
   { id: "cafes", label: "كافيهات" },
 ];
 
-/**
- * لإضافة صور حقيقية: ضع الملفات في public/portfolio/photos/{tag}/
- * ثم غيّر image إلى: "/portfolio/photos/restaurants/اسم-الصورة.jpg"
- *
- * للفيديو: thumbnail في public/portfolio/videos/thumbs/
- * و videoUrl: "/portfolio/videos/restaurants/clip.mp4" أو رابط YouTube
- */
-export const photoItems: PortfolioItem[] = [
-  {
-    id: "r1",
-    title: "مطعم الذوق الرفيع",
-    image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85",
-    tag: "restaurants",
-  },
-  {
-    id: "r2",
-    title: "طبق ستيك مشوي",
-    image:
-      "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=85",
-    tag: "restaurants",
-  },
-  {
-    id: "r3",
-    title: "أجواء المطعم",
-    image:
-      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=85",
-    tag: "restaurants",
-  },
-  {
-    id: "c1",
-    title: "Latte Art",
-    image:
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=85",
-    tag: "cafes",
-  },
-  {
-    id: "c2",
-    title: "ديكور الكافيه",
-    image:
-      "https://images.unsplash.com/photo-1453614512568-c40249d47910?w=800&q=85",
-    tag: "cafes",
-  },
-  {
-    id: "c3",
-    title: "مشروبات باردة",
-    image:
-      "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=85",
-    tag: "cafes",
-  },
-  {
-    id: "e1",
-    title: "مؤتمر تقني",
-    image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=85",
-    tag: "events",
-  },
-  {
-    id: "e2",
-    title: "حفل زفاف",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=85",
-    tag: "events",
-  },
-  {
-    id: "p1",
-    title: "ساعة فاخرة",
-    image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=85",
-    tag: "products",
-  },
-  {
-    id: "p2",
-    title: "عطر",
-    image:
-      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=85",
-    tag: "products",
-  },
-];
-
 export const videoItems: PortfolioItem[] = [
   {
-    id: "vv1",
-    title: "Reel - مطعم",
-    image:
-      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=85",
-    tag: "vertical",
-    aspect: "portrait",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: "vv2",
-    title: "TikTok - كافيه",
-    image:
-      "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=85",
-    tag: "vertical",
-    aspect: "portrait",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: "vv3",
-    title: "Short - منتج",
-    image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=85",
-    tag: "vertical",
-    aspect: "portrait",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: "hv1",
-    title: "فيديو تعريفي - شركة",
-    image:
-      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=85",
+    id: "v1",
+    title: "Mo7y Studio — إنتاج فيديو",
+    image: "https://img.youtube.com/vi/8Zy51_MkOog/hqdefault.jpg",
     tag: "horizontal",
     aspect: "landscape",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://youtu.be/8Zy51_MkOog",
   },
   {
-    id: "hv2",
-    title: "إعلان تجاري",
-    image:
-      "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=85",
-    tag: "horizontal",
-    aspect: "landscape",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: "hv3",
-    title: "YouTube - مطبخ",
-    image:
-      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=85",
-    tag: "horizontal",
-    aspect: "landscape",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: "vr1",
-    title: "Reel - مطعم",
-    image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=85",
-    tag: "restaurants",
+    id: "v2",
+    title: "Mo7y Studio — Short",
+    image: "https://img.youtube.com/vi/Mkfr99_uzPg/hqdefault.jpg",
+    tag: "vertical",
     aspect: "portrait",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: "vc1",
-    title: "Reel - كافيه",
-    image:
-      "https://images.unsplash.com/photo-1495474472283-4d789bc02bc5?w=600&q=85",
-    tag: "cafes",
-    aspect: "portrait",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://youtube.com/shorts/Mkfr99_uzPg",
   },
 ];
 
@@ -344,6 +210,10 @@ export function isVideoEmbed(url: string) {
 }
 
 export function toEmbedUrl(url: string) {
+  if (url.includes("youtube.com/shorts/")) {
+    const id = url.split("shorts/")[1]?.split("?")[0];
+    return id ? `https://www.youtube.com/embed/${id}` : url;
+  }
   if (url.includes("youtube.com/watch")) {
     const id = new URL(url).searchParams.get("v");
     return id ? `https://www.youtube.com/embed/${id}` : url;

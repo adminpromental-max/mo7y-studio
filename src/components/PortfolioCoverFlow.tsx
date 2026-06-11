@@ -141,6 +141,7 @@ export default function PortfolioCoverFlow({
                       src={item.image}
                       alt={item.title}
                       fill
+                      unoptimized={item.image.startsWith("/portfolio")}
                       className="object-cover"
                       sizes="(max-width: 640px) 78vw, 42vw"
                       priority={index === 0}

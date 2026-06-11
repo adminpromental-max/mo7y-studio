@@ -132,6 +132,7 @@ export default function PortfolioGallery({
                       src={item.image}
                       alt={item.title}
                       fill
+                      unoptimized={item.image.startsWith("/portfolio")}
                       className="object-cover"
                       sizes="80px"
                     />
@@ -165,6 +166,7 @@ export default function PortfolioGallery({
                   src={item.image}
                   alt={item.title}
                   fill
+                  unoptimized={item.image.startsWith("/portfolio")}
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
