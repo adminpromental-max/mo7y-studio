@@ -1,8 +1,9 @@
 import { photoItems } from "./photoItems";
+import { videoItems } from "./videos";
 
 export type GallerySlug = "photos" | "videos" | "websites";
 
-export { photoItems };
+export { photoItems, videoItems };
 
 export interface GalleryCategory {
   id: string;
@@ -41,7 +42,7 @@ export const galleryCategories: GalleryCategory[] = [
     description: "فيديوهات طولية وعرضية بجودة إنتاج عالية",
     slug: "videos",
     image: "https://img.youtube.com/vi/8Zy51_MkOog/hqdefault.jpg",
-    count: 2,
+    count: videoItems.length,
   },
   {
     id: "websites",
@@ -77,25 +78,6 @@ export const videoFilters = [
   { id: "horizontal", label: "عرضية" },
   { id: "restaurants", label: "مطاعم" },
   { id: "cafes", label: "كافيهات" },
-];
-
-export const videoItems: PortfolioItem[] = [
-  {
-    id: "v1",
-    title: "Mo7y Studio — إنتاج فيديو",
-    image: "https://img.youtube.com/vi/8Zy51_MkOog/hqdefault.jpg",
-    tag: "horizontal",
-    aspect: "landscape",
-    videoUrl: "https://youtu.be/8Zy51_MkOog",
-  },
-  {
-    id: "v2",
-    title: "Mo7y Studio — Short",
-    image: "https://img.youtube.com/vi/Mkfr99_uzPg/hqdefault.jpg",
-    tag: "vertical",
-    aspect: "portrait",
-    videoUrl: "https://youtube.com/shorts/Mkfr99_uzPg",
-  },
 ];
 
 /**
@@ -189,7 +171,7 @@ export function getGalleryBySlug(slug: string) {
   return galleryCategories.find((c) => c.slug === slug);
 }
 
-export function getItemsForGallery(slug: GallerySlug) {
+export function getStaticItemsForGallery(slug: GallerySlug) {
   if (slug === "photos") return photoItems;
   if (slug === "videos") return videoItems;
   return websiteItems;

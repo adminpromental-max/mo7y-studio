@@ -114,7 +114,11 @@ export default function PortfolioCoverFlow({
             return (
               <div
                 key={item.id}
-                className="min-w-0 flex-[0_0_78%] sm:flex-[0_0_58%] lg:flex-[0_0_42%] pl-3 sm:pl-4"
+                className={`min-w-0 pl-3 sm:pl-4 ${
+                  isLandscape && isVideo
+                    ? "flex-[0_0_92%] sm:flex-[0_0_72%] lg:flex-[0_0_55%]"
+                    : "flex-[0_0_78%] sm:flex-[0_0_58%] lg:flex-[0_0_42%]"
+                }`}
                 style={{ perspective: "1200px" }}
               >
                 <button
@@ -133,7 +137,7 @@ export default function PortfolioCoverFlow({
                       isPortrait
                         ? "aspect-[9/16] max-h-[420px] mx-auto max-w-[240px] sm:max-w-[280px]"
                         : isLandscape
-                          ? "aspect-video"
+                          ? "aspect-video min-h-[200px] sm:min-h-0"
                           : "aspect-[4/5] sm:aspect-square"
                     }`}
                   >

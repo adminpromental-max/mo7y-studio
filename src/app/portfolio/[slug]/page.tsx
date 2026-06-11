@@ -11,10 +11,12 @@ import WebsitePortfolioGallery from "@/components/WebsitePortfolioGallery";
 import {
   galleryCategories,
   getGalleryBySlug,
-  getItemsForGallery,
   getFiltersForGallery,
   isValidGallerySlug,
 } from "@/data/portfolio";
+import { getItemsForGallery } from "@/lib/portfolio-server";
+
+export const dynamic = "force-dynamic";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -40,7 +42,7 @@ export default async function PortfolioPage({ params }: Props) {
 
   if (!gallery || !isValidGallerySlug(slug)) notFound();
 
-  const items = getItemsForGallery(slug);
+  const items = await getItemsForGallery(slug);
   const filters = getFiltersForGallery(slug);
   const isVideo = slug === "videos";
   const isWebsite = slug === "websites";
