@@ -9,6 +9,20 @@ export interface LeadRecord {
   region: string;
   quizResult?: string;
   quizServices?: string;
+  source?: "quiz" | "amelia";
+  createdAt: string;
+}
+
+export interface AmeliaBookingRecord {
+  id: string;
+  action: string;
+  customerName?: string;
+  customerPhone?: string;
+  customerEmail?: string;
+  serviceName?: string;
+  bookingStart?: string;
+  status?: string;
+  raw: unknown;
   createdAt: string;
 }
 
@@ -17,6 +31,7 @@ export interface CmsStore {
   websites: PortfolioItem[];
   photos: PortfolioItem[];
   leads: LeadRecord[];
+  ameliaBookings: AmeliaBookingRecord[];
   /** كلمة مرور مشفّرة — بعد تغييرها من اللوحة */
   adminPasswordHash?: string;
 }
@@ -28,6 +43,7 @@ const emptyStore: CmsStore = {
   websites: [],
   photos: [],
   leads: [],
+  ameliaBookings: [],
 };
 
 export async function readCmsStore(): Promise<CmsStore> {
@@ -39,6 +55,7 @@ export async function readCmsStore(): Promise<CmsStore> {
       websites: parsed.websites ?? [],
       photos: parsed.photos ?? [],
       leads: parsed.leads ?? [],
+      ameliaBookings: parsed.ameliaBookings ?? [],
       adminPasswordHash: parsed.adminPasswordHash,
     };
   } catch {

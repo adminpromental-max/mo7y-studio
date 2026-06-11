@@ -45,17 +45,6 @@ async function notifyWeb3Forms(body: LeadPayload) {
 }
 
 export async function POST(request: Request) {
-  if (!isAmeliaConfigured() && !process.env.WEB3FORMS_ACCESS_KEY) {
-    return NextResponse.json(
-      {
-        success: false,
-        message:
-          "خدمة استقبال العملاء غير مفعّلة — أضف AMELIA_API_KEY في Vercel",
-      },
-      { status: 503 }
-    );
-  }
-
   let body: LeadPayload;
   try {
     body = await request.json();
@@ -80,37 +69,27 @@ export async function POST(request: Request) {
     quizServices,
   };
 
-  let ameliaOk = false;
+  // Amelia API — فقط لو Elite ومفعّل
   if (isAmeliaConfigured()) {
-    const amelia = await sendQuizLeadToAmelia(trimmed);
-    ameliaOk = amelia.success;
-    if (!ameliaOk && !process.env.WEB3FORMS_ACCESS_KEY) {
-      return NextResponse.json(
-        { success: false, message: amelia.message || "فشل الحفظ في Amelia" },
-        { status: 502 }
-      );
-    }
+    await sendQuizLeadToAmelia(trimmed);
   }
 
-  const email = await notifyWeb3Forms(trimmed);
-
-  if (!ameliaOk && !email.ok && !email.skipped) {
-    return NextResponse.json(
-      { success: false, message: "فشل الإرسال — حاول مرة أخرى" },
-      { status: 502 }
-    );
-  }
+  await notifyWeb3Forms(trimmed);
 
   try {
     const store = await readCmsStore();
     store.leads.unshift({
       id: newId("lead"),
       ...trimmed,
+      source: "quiz",
       createdAt: new Date().toISOString(),
     });
     await writeCmsStore(store);
   } catch {
-    // احتياطي محلي
+    return NextResponse.json(
+      { success: false, message: "تعذّر حفظ البيانات" },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({ success: true, code: "MO7Y20" });

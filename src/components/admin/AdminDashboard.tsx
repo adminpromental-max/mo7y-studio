@@ -250,7 +250,7 @@ export default function AdminDashboard() {
             {tab === "leads" && (
               <div className="space-y-4">
                 <p className="text-slate-400 text-sm">
-                  العملاء اللي أكملوا بياناتهم بعد الكويز — كمان بيوصلك إيميل على Web3Forms
+                  عملاء الكويز + حجوزات Amelia (عبر Webhook) — كلهم في مكان واحد
                 </p>
                 {data?.leads.length === 0 ? (
                   <p className="text-slate-500 py-12 text-center">لا يوجد عملاء بعد</p>
@@ -259,16 +259,28 @@ export default function AdminDashboard() {
                     <table className="w-full text-sm">
                       <thead className="bg-slate-900 text-slate-400">
                         <tr>
+                          <th className="text-right p-3">المصدر</th>
                           <th className="text-right p-3">الاسم</th>
                           <th className="text-right p-3">واتساب</th>
                           <th className="text-right p-3">المنطقة</th>
-                          <th className="text-right p-3">نتيجة الكويز</th>
+                          <th className="text-right p-3">التفاصيل</th>
                           <th className="text-right p-3">التاريخ</th>
                         </tr>
                       </thead>
                       <tbody>
                         {data?.leads.map((lead) => (
                           <tr key={lead.id} className="border-t border-slate-800">
+                            <td className="p-3">
+                              <span
+                                className={`text-xs px-2 py-0.5 rounded-full ${
+                                  lead.source === "amelia"
+                                    ? "bg-blue-900/50 text-blue-300"
+                                    : "bg-purple-900/50 text-purple-300"
+                                }`}
+                              >
+                                {lead.source === "amelia" ? "حجز" : "كويز"}
+                              </span>
+                            </td>
                             <td className="p-3">{lead.name}</td>
                             <td className="p-3" dir="ltr">
                               {lead.phone}
